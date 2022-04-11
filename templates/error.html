@@ -1,0 +1,12 @@
+{% block title %}Error Page{% endblock %}
+
+{% if no_result %}
+<h1>No results found</h1>
+<p>Unfortunately, none of the books in our database matched your search.</p>
+<a href="{{ url_for('books') }}">New search</a>
+{% endif %}
+
+{% if no_api %}
+<h1>Invalid isbn</h1>
+<p>Unfortunately, the Isbn number you entered was invalid.</p>
+{% endif %}

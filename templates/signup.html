@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block title %}SignUp{% endblock %}
+
+{% block content %}
+<main class="container signup-section">
+    <div class="section-content">
+        <form action="/signup" method="post" class="form_signup">
+            <h2 id="signup_title">Create an account</h2>
+
+            {{ form.csrf_token }}
+
+            <div class="form-group">
+                {{ form.user_name.label(for="user_name") }}
+                {{ form.user_name(id="username", placeholder="Enter Username") }}
+
+                {% if form.user_name.errors %}
+                {% for error in form.user_name.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.email.label(for="email") }}
+                {{ form.email(id="email", placeholder="Enter Email") }}
+
+                {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password.label(for="password") }}
+                {{ form.password(id="password", placeholder="Enter password") }}
+
+                {% if form.password.errors %}
+                {% for error in form.password.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.confirmPassword.label }}
+                {{ form.confirmPassword(id="password2", placeholder="Enter password again") }}
+
+                {% if form.confirmPassword.errors %}
+                {% for error in form.confirmPassword.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            {{ form.submit(class="btn-primary signup_submit") }}
+            <p class="signup_text"> Already registered? <a href="{{ url_for('login') }}">Log in here</a></p>
+
+        </form>
+    </div>
+</main>
+
+{% endblock %}

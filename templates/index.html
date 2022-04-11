@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Book Review{% endblock %}
+{% block content %}
+<main>
+    <section class="presentation">
+        <div class="introduction">
+            <div class="intro-text">
+                <h1>Find Your Favourite books Here</h1>
+                <p>
+                    More than 5000 books that you can review and enjoy.
+                </p>
+            </div>
+            <div class="bt">
+                <button class="cta-select"><a href="{{ url_for('signup') }}">Sign Up</a> </button>
+                <button class="cta-add"><a href="{{ url_for('login') }}">Get Started</a></button>
+            </div>
+        </div>
+        <div class="cover">
+            <img src="{{ url_for('static', filename= 'img/Books.png') }}" alt="books" />
+        </div>
+    </section>
+</main>
+{% endblock %}

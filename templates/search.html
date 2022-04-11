@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Result Page{% endblock %}
+{% block content %}
+<div class="container">
+    <h3>Records Found For {{ word }}</h3>
+    <div class="view_main">
+        <div class="view_wrap list-view" style="display: block;">
+            {% for row in books %}
+            <div class="view_item">
+                <div class="vi_left">
+                    <img class="card-img-top" src="http://covers.openlibrary.org/b/ISBN/{{ row.isbn }}-M.jpg"
+                        alt="Card image cap">
+                </div>
+                <div class="vi_right">
+                    <p class="title">{{ row.isbn }}</p>
+                    <p class="content">{{ row.title }}</p>
+                    <p class="content">{{ row.author }}</p>
+                    <div class="btn_view">
+                        <a href="{{ url_for('book_details', isbn=row.isbn) }}">View More</a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<main class="container signup-section">
+    <div class="section-content">
+        <form action="/login" method="POST" class="form_login">
+            <h2 class="login_title">Log in</h2>
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                {{ form.email.label }}
+                {{ form.email }}
+
+                {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password.label }}
+                {{ form.password }}
+
+                {% if form.password.errors %}
+                {% for error in form.password.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            {{ form.submit(class="btn-primary signup_submit") }}
+
+        </form>
+    </div>
+</main>
+{% endblock %}

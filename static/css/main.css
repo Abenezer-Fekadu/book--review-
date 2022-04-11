@@ -1,0 +1,402 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Messages */
+.success {
+  background: green;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid green;
+  color: #fff;
+}
+.danger {
+  background: crimson;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid red;
+  color: #fff;
+}
+/* Index */
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  width: 80%;
+  height: 10vh;
+  margin: auto;
+  align-items: center;
+}
+
+.logo-container,
+.nav-links,
+.top-bar {
+  display: flex;
+}
+
+.logo-container {
+  flex: 1;
+}
+.logo {
+  color: black;
+  font-weight: 400;
+  margin: 5px;
+  text-decoration: none;
+}
+nav {
+  flex: 2;
+}
+.nav-links {
+  justify-content: space-around;
+  list-style: none;
+}
+.nav-link {
+  color: #5f5f79;
+  font-size: 18px;
+  text-decoration: none;
+}
+.top-bar {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.presentation {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 80vh;
+  align-items: center;
+}
+.introduction {
+  flex: 1;
+}
+.intro-text h1 {
+  font-size: 44px;
+  font-weight: 500;
+  background: linear-gradient(to right, #494964, #6f6f89);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro-text p {
+  margin-top: 5px;
+  font-size: 22px;
+  color: #585772;
+}
+.bt {
+  padding: 50px 0px 0px 0px;
+}
+.cta-select {
+  border: 1px solid #c36cbb;
+  background: transparent;
+  color: #c36cbb;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.cta-add {
+  background: #c36cbb;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  color: white;
+  margin: 30px 0px 0px 30px;
+}
+.cta-select a {
+  text-decoration: none;
+  color: #c36cbb;
+}
+.cta-add a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.cover {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+}
+.cover img {
+  width: 60%;
+  height: 90%;
+  filter: drop-shadow(0px 5px 3px black);
+  animation: drop 1.5s ease;
+}
+
+.big-circle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  opacity: 0.5;
+  height: 80%;
+}
+.medium-circle {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  z-index: -1;
+  height: 60%;
+  opacity: 0.4;
+}
+.small-circle {
+  position: absolute;
+  bottom: 0%;
+  left: 20%;
+  z-index: -1;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .presentation {
+    flex-direction: column;
+  }
+  .introduction {
+    margin-top: 5vh;
+    text-align: center;
+  }
+  .intro-text h1 {
+    font-size: 30px;
+  }
+  .intro-text p {
+    font-size: 18px;
+  }
+  .bt {
+    padding: 10px 0px 0px 0px;
+  }
+
+  .cover img {
+    height: 80%;
+  }
+  .small-circle,
+  .medium-circle,
+  .big-circle {
+    opacity: 0.2;
+  }
+}
+/* Sign up */
+.signup-section {
+  display: flex;
+  justify-content: center;
+}
+.section-content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
+#signup_title {
+  text-align: center;
+  margin: 0 0 20px;
+}
+.form_signup {
+  margin: 50px 0;
+  padding: 20px 40px;
+}
+.form-group {
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.form-group label {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: 0;
+  border-color: #777;
+}
+.error-message {
+  color: #e74c3c;
+}
+.signup_submit {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+.signup_text {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+.signup_text a {
+  text-decoration: none;
+}
+/* Login Page */
+.form_login {
+  margin: 50px 0;
+  padding: 20px 40px;
+}
+.login_title {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+/* Search Page */
+.search_title {
+  margin: 20px;
+  padding: 0;
+  font-size: 24px;
+}
+#search {
+  display: inline-block;
+  font-size: 15px;
+  box-sizing: border-box;
+
+  width: 92%;
+  height: 40px;
+  outline: none;
+  padding: 0 25px;
+  border-radius: 25px 0 0 25px;
+
+  transition: 0.5s;
+}
+.form_search {
+  position: relative;
+}
+.search_btn {
+  background: #2ccd78;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: 0 15px;
+  letter-spacing: 1.2px;
+  border-radius: 0 25px 25px 0;
+}
+
+/* Books page */
+.card-img-top {
+  width: 75px;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 20px auto;
+}
+.view_main {
+  background: #fff;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.list-view .view_item {
+  border: 1px solid #e2efe1;
+  margin: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.list-view .view_item:last-child {
+  margin-bottom: 0;
+}
+
+.list-view .view_item .vi_left {
+  margin-right: 25px;
+}
+
+.view_item .title {
+  font-weight: 600;
+}
+
+.view_item .content {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 200;
+}
+
+.view_item .btn_view {
+  width: 125px;
+  background-color: #3498db;
+  padding: 8px 5px;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.view_item .btn_view:hover {
+  background-color: #3498dd;
+}
+.btn_view a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* book Details */
+/* .rating > input {
+  display: none;
+}
+.rating > label:before {
+  content: "\f005";
+  font-family: FontAwesome;
+  margin: 5px;
+  font-size: 2rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+  cursor: pointer;
+}
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #2ce679;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:checked ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: #2ddc76;
+} */
